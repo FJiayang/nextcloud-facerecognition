@@ -91,10 +91,10 @@ RUN wget -c -q -O facerecognition https://github.com/matiasdelellis/facerecognit
   && mv facerecognition-*  /usr/src/nextcloud/facerecognition \
   && cd /usr/src/nextcloud/facerecognition \
   && make
-Extend nextcloud:19-fpm-alpine
+Extend nextcloud:19.0.0-fpm-alpine
 In this example we show how to install Dlib from a repository and PDlib using docker-php-ext-install to build a Nextcloud image with Alpine and PHP FPM (for use with Nginx).
 
-FROM nextcloud:19-fpm-alpine
+FROM nextcloud:19.0.0-fpm-alpine
 
 RUN apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/testing dlib
 

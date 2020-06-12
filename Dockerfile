@@ -1,7 +1,7 @@
 #
 # Use a temporary image to compile and test the libraries
 #
-FROM nextcloud:apache as builder
+FROM nextcloud:19.0.0-fpm as builder
 
 # Build and install dlib on builder
 

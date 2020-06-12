@@ -6,8 +6,18 @@ FROM nextcloud:19.0.0-fpm as builder
 # Build and install dlib on builder
 
 RUN apt-get update ; \
-    apt-get install -y build-essential wget cmake libx11-dev libopenblas-dev
-
+    apt-get install -y build-essential wget cmake libx11-dev libopenblas-dev \
+        libbz2-dev \
+        libc-client-dev \
+        libkrb5-dev \
+        libsmbclient-dev \
+    ; \
+    \
+    docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
+    docker-php-ext-install \
+        bz2 \
+        imap \
+    ; \
 ARG DLIB_BRANCH=v19.19
 RUN wget -c -q https://github.com/davisking/dlib/archive/$DLIB_BRANCH.tar.gz \
     && tar xf $DLIB_BRANCH.tar.gz \

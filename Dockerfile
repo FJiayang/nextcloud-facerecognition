@@ -1,4 +1,4 @@
-FROM  fjy8018/nextcloud-facerecognition:latest
+FROM nextcloud:19.0.0-fpm-alpine
 
 RUN apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/testing dlib
 

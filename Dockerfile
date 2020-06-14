@@ -60,7 +60,6 @@ RUN apt-get update ; \
         libkrb5-dev \
         libsmbclient-dev \
     ; \
-    \
     docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
     docker-php-ext-install \
         bz2 \

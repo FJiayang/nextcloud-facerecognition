@@ -64,7 +64,7 @@ RUN apt-get update ; \
     docker-php-ext-install \
         bz2 \
         imap \
-    ; \
+    ;
 
 # Install dlib and PDlib to image
 

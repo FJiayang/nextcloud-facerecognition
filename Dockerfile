@@ -54,7 +54,18 @@ FROM nextcloud:apache
 # Install dependencies to image
 
 RUN apt-get update ; \
-    apt-get install -y libopenblas-base
+    apt-get install -y libopenblas-base \
+        libbz2-dev \
+        libc-client-dev \
+        libkrb5-dev \
+        libsmbclient-dev \
+    ; \
+    \
+    docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
+    docker-php-ext-install \
+        bz2 \
+        imap \
+    ;
 
 # Install dlib and PDlib to image
 

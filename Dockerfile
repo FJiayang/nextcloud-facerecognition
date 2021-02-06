@@ -102,3 +102,4 @@ RUN wget -c -q -O facerecognition https://github.com/matiasdelellis/facerecognit
   && mv facerecognition-*  /usr/src/nextcloud/facerecognition \
   && cd /usr/src/nextcloud/facerecognition \
   && make
+  
